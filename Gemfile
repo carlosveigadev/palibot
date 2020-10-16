@@ -5,8 +5,10 @@ ruby '2.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+# add pg
+gem 'pg', '~> 0.18.4'
+# add devise
+gem 'devise'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -40,6 +42,13 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'guard', '~> 2.16', '>= 2.16.2'
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
+  gem 'hirb', '~> 0.7.3'
+  gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
+  gem 'rubocop'
 end
 
 group :test do
@@ -48,6 +57,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
