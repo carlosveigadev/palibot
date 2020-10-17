@@ -14,16 +14,9 @@
         <h1>Palibot</h1>
       </div>
       <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-        <div class="text-sm lg:flex-grow lg:flex place-content-center text-gray-500">
-          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 hover:text-orange-600 mr-4">
-            <h4>Item 1</h4>
-          </a>
-          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0  hover:text-orange-600 mr-4">
-            <h4>Item 2</h4>
-          </a>
-          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 hover:text-orange-600">
-            <h4>Item 3</h4>
-          </a>
+        <div class="text-sm lg:flex-grow lg:flex space-x-16 place-content-center uppercase text-gray-500 font-extrabold">
+            <%= link_to 'New Article', new_article_path, class: "block mt-4 lg:inline-block lg:mt-0 hover:text-orange-600 mr-4" %>      
+            <%= link_to 'Home', articles_path, class: "block mt-4 lg:inline-block lg:mt-0 hover:text-orange-600 mr-4" %>
         </div>
         <div class="text-gray-500 font-extrabold">
           <% if current_user %>
@@ -38,6 +31,9 @@
       </div>
     </nav> 
   <body class="bg-brown">
+    <% flash.each do |key, value| %>
+      <div class="flash <%= key %>"><%= value %></div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

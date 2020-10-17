@@ -72,4 +72,12 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:title, :content, :image)
     end
+
+    def authenticate_user!
+      unless current_user
+        flash[:alert] = 'You should login first, or register a new user.'
+        redirect_to new_user_session_path
+      end
+    end
+
 end
