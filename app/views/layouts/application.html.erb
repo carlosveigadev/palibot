@@ -1,18 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PalibotBlog</title>
+    <title>Palibot Blog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+   <nav class="flex items-center justify-between flex-wrap bg-white p-6">
+      <div class="flex items-center flex-shrink-0 text-gray-800 mr-6 uppercase">
+        <h1>Palibot</h1>
+      </div>
+      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <div class="text-sm lg:flex-grow lg:flex place-content-center text-gray-500">
+          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 hover:text-orange-600 mr-4">
+            <h4>Item 1</h4>
+          </a>
+          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0  hover:text-orange-600 mr-4">
+            <h4>Item 2</h4>
+          </a>
+          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 hover:text-orange-600">
+            <h4>Item 3</h4>
+          </a>
+        </div>
+        <div class="text-gray-500 font-extrabold">
+          <% if current_user %>
+            <%= link_to current_user.username.humanize, edit_user_registration_path, class: 'hover:text-orange-600'  %> |
+            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:'hover:text-orange-600' %>
+          <% else %>
+            <%= link_to 'Login', new_user_session_path, class:'hover:text-orange-600 uppercase' %> |
+            <%= link_to 'Register', new_user_registration_path,class:'hover:text-orange-600 uppercase' %>
+          <% end %>
+          </a>
+        </div>
+      </div>
+    </nav> 
+  <body class="bg-brown">
     <%= yield %>
   </body>
 </html>
