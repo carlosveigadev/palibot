@@ -51,6 +51,8 @@ RSpec.describe Article, type: :model do
     it { should belong_to(:user) }
     it { should have_many(:votes) }
     it { should have_many(:article_categories) }
+    it { should have_many(:article_trips) }
     it { should have_many(:categories) }
+    it { should have_one_attached(:image) } 
   end
 end

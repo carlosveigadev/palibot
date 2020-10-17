@@ -12,7 +12,7 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @article.image %>
+  <%= image_tag @article.image, class: 'form-img' %>
 </p>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |

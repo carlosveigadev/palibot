@@ -22,8 +22,12 @@
   </div>
 
   <div class="field">
+    <% if article.image.attached? %>
+      <%= image_tag article.image, class: 'form-img' %>
+    <% end %>
+
     <%= form.label :image %>
-    <%= form.text_field :image %>
+    <%= form.file_field :image %>
   </div>
 
   <div class="actions">

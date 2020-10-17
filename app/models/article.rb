@@ -1,6 +1,9 @@
 class Article < ApplicationRecord
+  has_one_attached :image
   has_many :article_categories
   has_many :categories, through: :article_categories
+  has_many :article_trips
+  has_many :trips, through: :article_trips
   belongs_to :user
   has_many :votes, dependent: :destroy
   validates :content, presence: true,
