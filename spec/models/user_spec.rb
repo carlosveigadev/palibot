@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.describe User, type: :model do
   let(:user) { User.new(id: 1, email: 'test@test.com', username: 'Test34', password: '123456') }
 
