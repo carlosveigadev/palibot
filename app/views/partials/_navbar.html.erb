@@ -1,0 +1,20 @@
+<nav class="flex items-center justify-between flex-wrap bg-white p-6">
+      <div class="flex items-center flex-shrink-0 text-gray-800 mr-6 uppercase">
+        <h1>Palibot</h1>
+      </div>
+      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <div class="text-sm lg:flex-grow lg:flex space-x-16 place-content-center uppercase text-gray-500 font-extrabold">
+            <%= link_to 'New Article', new_article_path, class: "block mt-4 lg:inline-block lg:mt-0 hover:text-orange-600 mr-4" %>      
+            <%= link_to 'Home', articles_path, class: "block mt-4 lg:inline-block lg:mt-0 hover:text-orange-600 mr-4" %>
+        </div>
+        <div class="text-gray-500 font-extrabold">
+          <% if current_user %>
+            <%= link_to current_user.username.humanize, edit_user_registration_path, class: 'hover:text-orange-600'  %> |
+            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:'hover:text-orange-600' %>
+          <% else %>
+            <%= link_to 'Login', new_user_session_path, class:'hover:text-orange-600 uppercase' %> |
+            <%= link_to 'Register', new_user_registration_path,class:'hover:text-orange-600 uppercase' %>
+          <% end %>
+        </div>
+      </div>
+    </nav> 
