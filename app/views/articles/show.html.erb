@@ -14,5 +14,11 @@
   <%= image_tag @article.image, class: 'form-img' %>
 </p>
 
+<%= button_to 'Vote', article_votes_path(@article), method: :post %>
+<p>
+  <%= @article.votes.count %> 
+  <%= (@article.votes.count) == 1 ? 'Vote' : 'Votes'%>
+</p>
+
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
