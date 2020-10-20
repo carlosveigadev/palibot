@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all
+    @top_article = Article.where(id: most_voted_id)
   end
 
   # GET /articles/1
@@ -73,8 +74,13 @@ class ArticlesController < ApplicationController
   end
 
   def authenticate_user!
-    return unless current_user
+    unless current_user
+      redirect_to new_user_session_path, flash: { error: 'You should login first, or register a new user.' }
+    end
+  end
 
-    redirect_to new_user_session_path, flash[:alert] = 'You should login first, or register a new user.'
+  def most_voted_id
+    id = Vote.most_voted.keys
+    id[0]
   end
 end

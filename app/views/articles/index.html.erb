@@ -1,32 +1,35 @@
 <%= render "partials/navbar" %>
 <%= render "partials/errors" %>
 
-<h1>Articles</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.content %></td>
-        <td><%= image_tag article.image, class: 'form-img' %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="flex center py-1">
+  <div class="m-auto relative">
+    <% @top_article.each do |article| %>
+      <%= link_to article do %>
+        <%= image_tag article.image, alt: 'Top Main Image', class: 'top-img-size object-cover rounded' %>
+        <div class='absolute bottom-0 txt-bg w-full font-bold'>
+           <%= link_to article do %>
+          <h2 class="m-4 text-orange-600 "><%= article.title %></h2>
+        <% end %>
+        <%= link_to article do %>
+          <h2 class="m-4 text-white"><%= truncate article.content, length: 60, omission: '...(click for more)' %></h2>
+         <% end %>
+        </div>
+      <% end %>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
 
-<br>
+
+<h2>line</h2>
+<tbody>
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.content %></td>
+      <td><%= image_tag article.image, class: 'form-img' %></td>
+      <td><%= link_to 'Show', article %></td>
+    </tr>
+  <% end %>
+</tbody>
 
 <%= link_to 'New Article', new_article_path %>
