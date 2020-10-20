@@ -1,9 +1,9 @@
-<%= form_with(model: article, local: true) do |form| %>
+<div class="w-full px-12">
+<%= form_with(model: article, local: true, html: {class: 'bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4'}) do |form| %>
   <% if article.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="text-center">
       <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
-
-      <ul>
+      <ul class="text-red-600 text-center">
         <% article.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_area :title %>
+    <%= form.label :title, class: 'form-text my-3' %>
+    <%= form.text_field :title, class: 'input-form' %>
   </div>
 
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.label :content, class: 'form-text my-3' %>
+    <%= form.text_area :content, class: 'input-form' %>
   </div>
 
   <div class="field">
@@ -26,11 +26,22 @@
       <%= image_tag article.image, class: 'form-img' %>
     <% end %>
 
-    <%= form.label :image %>
-    <%= form.file_field :image %>
+    <%= form.label :image, class: 'form-text my-3' %>
+    <%= form.file_field :image, class: 'form-text' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+   <div class="field flex my-3">
+    <%= form.label :category_ids, 'Select the continent:', class: 'form-text m-3' %>
+    <%= form.select :category_ids, options_for_select(@categories), {}, class: 'bg-white text-orange-600' %>
+    </div>
+ 
+
+  <div class="my-5 flex justify-evenly">
+    <div class="actions">
+      <%= form.submit class: "btn-orange" %>
+    </div>
+    <%= link_to 'Back', articles_path, class: "inline-block align-baseline font-bold text-sm text-orange-500 hover:text-orange-900" %>
+  </div> 
+   </div>
 <% end %>
+</div>

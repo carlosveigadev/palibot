@@ -1,12 +1,13 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
   before_action :authenticate_user!, except: %i[index show]
-
+  before_action :get_categories, only: [:new]
   # GET /articles
   # GET /articles.json
   def index
     @articles = Article.all
     @top_article = Article.where(id: most_voted_id)
+    @categories = Category.order_by_priority
   end
 
   # GET /articles/1
@@ -70,7 +71,7 @@ class ArticlesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def article_params
-    params.require(:article).permit(:title, :content, :image)
+    params.require(:article).permit(:title, :content, :image, category_ids: [])
   end
 
   def authenticate_user!
@@ -82,5 +83,9 @@ class ArticlesController < ApplicationController
   def most_voted_id
     id = Vote.most_voted.keys
     id[0]
+  end
+
+  def get_categories
+    @categories = Category.pluck('name', 'id')
   end
 end

@@ -48,6 +48,10 @@ h1 {
   background-color: #ff6200fa;
 }
 
+.icon-style:hover {
+  cursor: pointer;
+}
+
 .icon-style i {
   @apply text-2xl font-bold;
   color: #4e443e;
@@ -60,6 +64,7 @@ h1 {
   -webkit-animation: fadeinout 4s linear forwards;
   animation: fadeinout 4s linear forwards;
   opacity: 0;
+  z-index: 1;
 }
 
 @-webkit-keyframes fadeinout {
@@ -72,7 +77,6 @@ h1 {
 
 .top-img-size {
   height: 450px;
-  width: 800px;
 }
 
 .txt-bg {
