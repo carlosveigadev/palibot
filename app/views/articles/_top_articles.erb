@@ -15,21 +15,19 @@
     <% end %>
   </div>
 </div>
-<div class="">
-  <div class="grid grid-cols-5">
-      <% @categories.each do |c| %>
-        <div class='font-bold bg-center bg-cover' style="background-image: url(<%= url_for(c.articles.last.image) %>)";>
-          <%= link_to category_path(c.id) do %>
-            <h2 class="text-white m-3 green-underline">
-              <%= c.name %>
-            </h2>
-          <% end %>
-          <%= link_to category_path(c.id) do %>
-            <h2 class="text-white p-3 pt-24 txt-bg ">
-              <%= truncate c.articles.last.title, length: 30, omission: '...(click for article)' %>
-            </h2>
-          <% end %>
-        </div>
-      <% end %>
-  </div>
+<div class="grid grid-cols-5">
+    <% @categories.each do |c| %>
+      <div class='font-bold bg-center bg-cover' style="background-image: url(<%= url_for(c.articles.last.image) %>)";>
+        <%= link_to category_path(c.id) do %>
+          <h2 class="text-white m-3 green-underline">
+            <%= c.name %>
+          </h2>
+        <% end %>
+        <%= link_to article_path(c.articles.ids) do %>
+          <h2 class="text-white p-3 pt-24 txt-bg">
+            <%= truncate c.articles.last.title, length: 30, omission: '...(click for article)' %>
+          </h2>
+        <% end %>
+      </div>
+    <% end %>
 </div>

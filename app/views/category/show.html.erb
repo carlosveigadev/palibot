@@ -1,32 +1,22 @@
 <%= render "partials/errors" %>
-<p>
-  <strong>Title:</strong>
-  <%= @category.name %>
-</p>
 
-<% @articles.each do |art| %>
-  <%= @category.name %>
-  <%= art.title %>
-  <%= image_tag art.image %>
-  <%= art.content %>
-<% end %>
 
-<div class="flex center py-1">
-  <div class="mx-5 w-full relative">
-    <% @top_article.each do |article| %>
-      <%= link_to article do %>
-        <%= image_tag article.image, alt: 'Top Main Image', class: 'top-img-size object-cover rounded w-full' %>
-        <div class='absolute bottom-0 txt-bg w-full font-bold'>
-           <%= link_to article do %>
-          <h2 class="m-4 text-orange-600 "><%= article.title %></h2>
+<div class="grid grid-cols-2">
+  <% @articles.each do |art| %>
+    <div class="grid grid-cols-2 box">
+      <div>
+        <%= image_tag art.image, class: 'w-full h-full' %>
+      </div>
+      <div class="flex flex-col bg-gray-200 h-full">
+        <%= link_to article_path(art.id) do %> 
+          <h2 class="text-orange-600  m-3 font-bold orange-underline"><%= art.user.username.humanize %></h2>
         <% end %>
-        <%= link_to article do %>
-          <div class="m-4 text-white"><%= truncate article.content, length: 60, omission: '...(click for more)' %></div>
-         <% end %>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
+        <h2 class="font-bold m-3"><%= art.title %></h2>
+        <h2 class="m-3"><%= art.content %></h2>
+        <%= link_to "Read More", article_path(art.id), class: 'text-orange-600 m-3'  %>
+      </div>
+    </div>
+  <% end %>
 </div>
 
 <%= render "partials/footer" %>
