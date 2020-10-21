@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
   before_action :authenticate_user!, except: %i[index show]
-  before_action :get_categories, only: [:new]
+  before_action :get_categories, only: %i[edit update new create]
   # GET /articles
   # GET /articles.json
   def index
@@ -81,11 +81,10 @@ class ArticlesController < ApplicationController
   end
 
   def most_voted_id
-    id = Vote.most_voted.keys
-    id[0]
+    Vote.most_voted.keys.first
   end
 
   def get_categories
-    @categories = Category.pluck('name', 'id')
+    @categories = Category.all.map{ |c| [c.name, c.id]}
   end
 end
