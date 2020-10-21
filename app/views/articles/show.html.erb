@@ -19,5 +19,5 @@
   <%= @article.votes.count %> 
   <%= (@article.votes.count) == 1 ? 'Vote' : 'Votes'%>
 </p>
-
+<%= link_to 'Delete', articles_path, method: :destroy %>
 <%= link_to 'Back', articles_path %>

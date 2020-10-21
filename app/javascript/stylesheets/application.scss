@@ -83,3 +83,14 @@ h1 {
   // background: #4e443e;
   background: linear-gradient(360deg, rgba(78,68,62,1) 0%, rgba(0,0,0,0) 100%);
 }
+
+.green-underline {
+  border-bottom: 2px solid greenyellow;
+  display: inline-block;
+}
+
+.category-grid-images {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

@@ -5,7 +5,28 @@
 </p>
 
 <% @articles.each do |art| %>
+  <%= @category.name %>
   <%= art.title %>
   <%= image_tag art.image %>
   <%= art.content %>
 <% end %>
+
+<div class="flex center py-1">
+  <div class="mx-5 w-full relative">
+    <% @top_article.each do |article| %>
+      <%= link_to article do %>
+        <%= image_tag article.image, alt: 'Top Main Image', class: 'top-img-size object-cover rounded w-full' %>
+        <div class='absolute bottom-0 txt-bg w-full font-bold'>
+           <%= link_to article do %>
+          <h2 class="m-4 text-orange-600 "><%= article.title %></h2>
+        <% end %>
+        <%= link_to article do %>
+          <div class="m-4 text-white"><%= truncate article.content, length: 60, omission: '...(click for more)' %></div>
+         <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<%= render "partials/footer" %>
