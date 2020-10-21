@@ -71,7 +71,7 @@ class ArticlesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def article_params
-    params.require(:article).permit(:title, :content, :image, category_ids: [])
+    params.require(:article).permit!
   end
 
   def authenticate_user!
@@ -85,6 +85,6 @@ class ArticlesController < ApplicationController
   end
 
   def get_categories
-    @categories = Category.all.map{ |c| [c.name, c.id]}
+    @categories = Category.pluck('name', 'id')
   end
 end
