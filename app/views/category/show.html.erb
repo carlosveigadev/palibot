@@ -1,0 +1,11 @@
+<%= render "partials/errors" %>
+<p>
+  <strong>Title:</strong>
+  <%= @category.name %>
+</p>
+
+<% @articles.each do |art| %>
+  <%= art.title %>
+  <%= image_tag art.image %>
+  <%= art.content %>
+<% end %>

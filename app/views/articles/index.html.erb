@@ -11,7 +11,7 @@
           <h2 class="m-4 text-orange-600 "><%= article.title %></h2>
         <% end %>
         <%= link_to article do %>
-          <h2 class="m-4 text-white"><%= truncate article.content, length: 60, omission: '...(click for more)' %></h2>
+          <div class="m-4 text-white"><%= truncate article.content, length: 60, omission: '...(click for more)' %></div>
          <% end %>
         </div>
       <% end %>
@@ -20,16 +20,9 @@
 </div>
 <div class="flex>
   <div class="mx-5 relative">
-    <% @articles.each do |article| %>
-      <%= image_tag article.image, class: 'top-img-size object-cover' %>
-      <div class='absolute bottom-0 txt-bg w-full font-bold'>
-        <%= link_to article do %>
-        <h2 class="m-4 text-orange-600 "><%= article.title %></h2>
-        <% end %>
-        <%= link_to article do %>
-        <h2 class="m-4 text-white"><%= truncate article.content, length: 60, omission: '...(click for more)' %></h2>
-        <% end %>
-      </div>
+    <% @categories.each do |c| %>
+      <%= link_to c.name, category_path(c.id) %>
+ 
     <% end %>
   </div>
 </div>

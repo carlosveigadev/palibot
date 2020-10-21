@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :articles do
     resources :votes
   end
+  resources :category, only: [:show]
 end
