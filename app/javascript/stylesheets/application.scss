@@ -80,8 +80,11 @@ h1 {
 }
 
 .txt-bg {
-  // background: #4e443e;
   background: linear-gradient(360deg, rgba(78,68,62,1) 0%, rgba(0,0,0,0) 100%);
+}
+
+.txt-bg-cat {
+  background: linear-gradient(360deg, rgba(78, 68, 62, 0.85) 0%, rgba(0,0,0,0) 100%);
 }
 
 .green-underline {

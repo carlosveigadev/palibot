@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
   before_action :authenticate_user!, except: %i[index show]
-  before_action :get_categories, only: %i[edit update new create]
+  before_action :load_categories, only: %i[edit update new create]
   # GET /articles
   # GET /articles.json
   def index
@@ -75,16 +75,16 @@ class ArticlesController < ApplicationController
   end
 
   def authenticate_user!
-    unless current_user
-      redirect_to new_user_session_path, flash: { error: 'You should login first, or register a new user.' }
-    end
+    return unless current_user
+
+    redirect_to new_user_session_path, flash: { error: 'You should login first, or register a new user.' }
   end
 
   def most_voted_id
     Vote.most_voted.keys.first
   end
 
-  def get_categories
+  def load_categories
     @categories = Category.pluck('name', 'id')
   end
 end
