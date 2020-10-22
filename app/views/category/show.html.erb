@@ -1,7 +1,7 @@
 <%= render "partials/errors" %>
 <div class="grid grid-cols-2">
   <% @articles.each do |art| %>
-    <div class="item-wrapper grid grid-cols-2">
+    <div class="item-wrapper grid sm:grid-cols-1 lg:grid-cols-2">
       <div class="box-wrapper">
         <div class="custom-height">
           <%= image_tag art.image, class: 'w-full h-full' %>
@@ -21,7 +21,7 @@
               <% end %>
               <h2 class='p-1'> <%= art.votes.count %> <%= (art.votes.count) == 1 ? 'Vote' : 'Votes'%></h2>
             </div>
-            <%= link_to "Read More", article_path(art.id), class: 'text-orange-600 m-5 pl-24' %>
+            <%= link_to "Read More", article_path(art.id), class: 'text-orange-600 m-5' %>
           </div>
         </div>
       </div>
