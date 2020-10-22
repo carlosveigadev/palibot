@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :username, presence: true
   has_many :articles
   has_many :votes
+  validates_uniqueness_of :username
 
   attr_writer :login
 

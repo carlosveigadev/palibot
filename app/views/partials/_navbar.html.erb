@@ -30,10 +30,10 @@
     <div class="text-gray-500 font-extrabold">
       <% if current_user %>
         <%= link_to current_user.username.humanize, edit_user_registration_path, class: 'hover:text-orange-600'  %> |
-        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:'hover:text-orange-600' %>
+        <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class:'hover:text-orange-600' %>
       <% else %>
         <%= link_to 'Login', new_user_session_path, class:'hover:text-orange-600 uppercase' %> |
-        <%= link_to 'Register', new_user_registration_path,class:'hover:text-orange-600 uppercase' %>
+        <%= link_to 'Sign Up', new_user_registration_path,class:'hover:text-orange-600 uppercase' %>
       <% end %>
     </div>
   </div>
