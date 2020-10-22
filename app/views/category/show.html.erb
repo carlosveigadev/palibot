@@ -1,22 +1,26 @@
 <%= render "partials/errors" %>
 
-
 <div class="grid grid-cols-2">
   <% @articles.each do |art| %>
-    <div class="grid grid-cols-2 box">
-      <div>
-        <%= image_tag art.image, class: 'w-full h-full' %>
+    <div class="item-wrapper grid grid-cols-2">
+      <div class="box-wrapper">
+        <div class="custom-height">
+          <%= image_tag art.image, class: 'w-full h-full' %>
+        </div>
       </div>
-      <div class="flex flex-col bg-gray-200 h-full">
-        <%= link_to article_path(art.id) do %> 
-          <h2 class="text-orange-600  m-3 font-bold orange-underline"><%= art.user.username.humanize %></h2>
-        <% end %>
-        <h2 class="font-bold m-3"><%= art.title %></h2>
-        <h2 class="m-3"><%= art.content %></h2>
-        <%= link_to "Read More", article_path(art.id), class: 'text-orange-600 m-3'  %>
+      <div class="box-wrapper">
+        <div class="flex flex-col bg-gray-200 h-full">
+          <%= link_to article_path(art.id) do %> 
+            <h2 class="text-orange-600  m-3 font-bold orange-underline"><%= art.user.username.humanize %></h2>
+          <% end %>
+          <h2 class="font-bold m-3"><%= art.title %></h2>
+          <h2 class="m-3"><%= art.content %></h2>
+          <%= link_to "Read More", article_path(art.id), class: 'text-orange-600 m-3 self-end mt-40' %>
+        </div>
       </div>
     </div>
   <% end %>
 </div>
+
 
 <%= render "partials/footer" %>
