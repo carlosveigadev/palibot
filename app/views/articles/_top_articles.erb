@@ -15,7 +15,7 @@
     <% end %>
   </div>
 </div>
-<div class="grid grid-cols-5">
+<div class="grid lg:grid-cols-5 sm:grid-cols-2">
     <% @categories.each do |c| %>
       <div class='font-bold bg-center bg-cover' style="background-image: url(<%= url_for(c.articles.last.image) %>)";>
         <%= link_to category_path(c.id) do %>
