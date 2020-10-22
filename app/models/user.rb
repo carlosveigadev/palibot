@@ -5,7 +5,6 @@ class User < ApplicationRecord
   validates :username, presence: true
   has_many :articles
   has_many :votes
-  has_many :trips, dependent: :destroy
 
   attr_writer :login
 
