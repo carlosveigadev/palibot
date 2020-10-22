@@ -9,13 +9,13 @@
         </div>
       </div>
       <div class="box-wrapper">
-        <div class="flex flex-col bg-gray-200 h-full">
+        <div class="flex flex-col bg-gray-200 h-full ">
           <%= link_to article_path(art.id) do %> 
-            <h2 class="text-orange-600  m-3 font-bold orange-underline"><%= art.user.username.humanize %></h2>
+            <h2 class="text-orange-600 m-3 font-bold orange-underline"><%= art.user.username.humanize %></h2>
           <% end %>
           <h2 class="font-bold m-3"><%= art.title %></h2>
-          <h2 class="m-3"><%= art.content %></h2>
-          <%= link_to "Read More", article_path(art.id), class: 'text-orange-600 m-3 self-end mt-40' %>
+          <h2 class="m-3 box-145"><%= truncate art.content, length: 240 %></h2>
+          <%= link_to "Read More", article_path(art.id), class: 'text-orange-600 m-3 self-end' %>
         </div>
       </div>
     </div>
