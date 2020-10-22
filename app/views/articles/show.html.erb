@@ -15,6 +15,11 @@
       <%= image_tag @article.image %>
     </p>
   </div>
-  
+  <div class="text-xl p-5 flex place-content-center">
+    <%= link_to article_votes_path(@article), method: :post, class: 'text-orange-600 p-2' do %>
+     <i class="fa fa-thumbs-up"></i>
+    <% end %>
+    <h2 class='p-2'> <%= @article.votes.count %> <%= (@article.votes.count) == 1 ? 'Vote' : 'Votes'%></h2>
+  </div>
 </div>
 <%= render "partials/footer" %>
