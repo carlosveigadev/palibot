@@ -1,20 +1,40 @@
-<nav class="flex items-center justify-between flex-wrap bg-white p-3">
-      <div class="flex items-center flex-shrink-0 text-gray-800 mr-6 uppercase">
-        <embed class='logo-size' src='../assets/palibot_logo.svg'>
-      </div>
-      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-        <div class="text-sm lg:flex-grow lg:flex space-x-16 place-content-center uppercase text-gray-500 font-extrabold">
-            <%= link_to 'New Article', new_article_path, class: "block mt-4 lg:inline-block lg:mt-0 hover:text-orange-600 mr-4" %>      
-            <%= link_to 'Home', articles_path, class: "block mt-4 lg:inline-block lg:mt-0 hover:text-orange-600 mr-4" %>
-        </div>
-        <div class="text-gray-500 font-extrabold">
-          <% if current_user %>
-            <%= link_to current_user.username.humanize, edit_user_registration_path, class: 'hover:text-orange-600'  %> |
-            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:'hover:text-orange-600' %>
-          <% else %>
-            <%= link_to 'Login', new_user_session_path, class:'hover:text-orange-600 uppercase' %> |
-            <%= link_to 'Register', new_user_registration_path,class:'hover:text-orange-600 uppercase' %>
-          <% end %>
-        </div>
-      </div>
-    </nav> 
+<nav class="flex items-center justify-between flex-wrap bg-gray-100 p-3">
+  <div class="flex items-center flex-shrink-0 text-gray-800 mr-6 uppercase">
+    <embed class='logo-size' src='../assets/palibot_logo.svg'>
+  </div>
+  <div class="z-10 lg:hidden">
+    <div class="dropdown inline-block relative">
+      <button class="text-gray-700 font-semibold p-2 rounded inline-flex items-center">
+        <span class="mr-1"><i class="fa fa-bars"></i></span>
+      </button>
+      <ul class="dropdown-menu absolute hidden inset-y-100 right-0 p-6 border-orange-600 text-gray-700 pt-1 bg-white rounded">
+       <li><%= link_to 'New Article', new_article_path, class: "block hover:text-orange-600 p-2" %> </li>     
+       <li><%= link_to 'Home', articles_path, class: "block hover:text-orange-600 p-2" %></li> 
+       <li><div class="text-gray-500 font-extrabold p-2">
+      <% if current_user %>
+        <%= link_to current_user.username.humanize, edit_user_registration_path, class: 'hover:text-orange-600' %>
+        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:'hover:text-orange-600' %>
+      <% else %>
+        <%= link_to 'Login', new_user_session_path, class:'hover:text-orange-600 uppercase' %>
+        <%= link_to 'Register', new_user_registration_path,class:'hover:text-orange-600 uppercase' %>
+      <% end %>
+    </div></li>
+      </ul>
+    </div>
+  </div>
+  <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden">
+    <div class="text-sm lg:flex-grow lg:flex space-x-16 place-content-center uppercase text-gray-500 font-extrabold">
+        <%= link_to 'New Article', new_article_path, class: "block mt-4 lg:inline-block lg:mt-0 hover:text-orange-600 mr-4" %>      
+        <%= link_to 'Home', articles_path, class: "block mt-4 lg:inline-block lg:mt-0 hover:text-orange-600 mr-4" %>
+    </div>
+    <div class="text-gray-500 font-extrabold">
+      <% if current_user %>
+        <%= link_to current_user.username.humanize, edit_user_registration_path, class: 'hover:text-orange-600'  %> |
+        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:'hover:text-orange-600' %>
+      <% else %>
+        <%= link_to 'Login', new_user_session_path, class:'hover:text-orange-600 uppercase' %> |
+        <%= link_to 'Register', new_user_registration_path,class:'hover:text-orange-600 uppercase' %>
+      <% end %>
+    </div>
+  </div>
+</nav> 

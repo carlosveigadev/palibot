@@ -117,3 +117,7 @@ h1 {
 .item-wrapper:nth-child(4n+4) .box-wrapper:nth-child(1) {
   order: 1;
 }
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
