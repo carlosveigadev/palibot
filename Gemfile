@@ -38,6 +38,8 @@ gem 'faker'
 
 gem 'inline_svg'
 
+gem 'aws-sdk'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
