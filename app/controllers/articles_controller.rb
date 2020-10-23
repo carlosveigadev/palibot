@@ -75,9 +75,10 @@ class ArticlesController < ApplicationController
   end
 
   def authenticate_user!
-    return unless current_user
+    return if current_user
 
-    redirect_to new_user_session_path, flash: { error: 'You should login first, or register a new user.' }
+    flash[:alert] = 'You should login first, or register a new user.'
+    redirect_to new_user_session_path
   end
 
   def most_voted_id

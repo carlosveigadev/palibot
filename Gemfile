@@ -33,13 +33,14 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # add font-awesome
 gem 'font-awesome-rails'
 
-#add faker gem
+# add faker gem
 gem 'faker'
 
 gem 'inline_svg'
 
 gem 'aws-sdk'
 
+gem 'carrierwave', '~> 2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -53,6 +54,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'bullet'
   gem 'guard', '~> 2.16', '>= 2.16.2'
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
   gem 'hirb', '~> 0.7.3'
@@ -60,7 +62,6 @@ group :development do
   gem 'rubocop'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'bullet'
 end
 
 group :test do
