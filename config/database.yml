@@ -52,3 +52,13 @@ test:
   username: carlos
   password: carlos
   timeout: 5000
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: myapp_test
+  pool: 5
+  username: carlos
+  password: carlos
+  timeout: 5000
+
