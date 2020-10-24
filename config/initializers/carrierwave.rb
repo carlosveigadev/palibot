@@ -3,8 +3,8 @@ CarrierWave.configure do |config|
     config.fog_provider = ‘fog/aws’ 
     config.fog_credentials = {
       :provider => ‘AWS’,
-      :aws_access_key_id => 'AKIA6Q73WVIUWEOHCCP5',
-      :aws_secret_access_key => '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',
+      access_key_id: Rails.application.credentials[:amazon][:key],
+      secret_access_key: Rails.application.credentials[:amazon][:secret],
       :region => 'us-east-2'
     }
     config.fog_directory = palibot-blog
