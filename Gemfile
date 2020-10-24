@@ -44,6 +44,9 @@ gem 'fog-aws'
 
 gem 'carrierwave', '~> 2.0'
 
+group :assets do
+         gem 'turbo-sprockets-rails3'
+ end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
