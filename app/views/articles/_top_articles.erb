@@ -2,7 +2,7 @@
   <div class="w-full relative">
     <% @top_article.each do |article| %>
       <%= link_to article do %>
-        <%= image_tag article.image, alt: 'Top Main Image', class: 'top-img-size object-cover w-full' %>
+        <%= image_tag article.image.to_s, alt: 'Top Main Image', class: 'top-img-size object-cover w-full' %>
         <div class='absolute bottom-0 txt-bg w-full font-bold'>
            <%= link_to article do %>
           <h2 class="m-4 text-orange-600 "><%= article.title %></h2>
@@ -17,7 +17,7 @@
 </div>
 <div class="grid lg:grid-cols-5 sm:grid-cols-2">
     <% @categories.each do |c| %>
-      <div class='font-bold bg-center bg-cover' style="background-image: url(<%= url_for(c.articles.last.image) %>)";>
+      <div class='font-bold bg-center bg-cover' style="background-image: url(<%= c.articles.last.image %>)";>
         <%= link_to category_path(c.id) do %>
           <h2 class="text-white m-3 green-underline">
             <%= c.name %>
