@@ -22,10 +22,6 @@
   </div>
 
   <div class="field">
-    <% if article.image.attached? %>
-      <%= image_tag article.image, class: 'form-img' %>
-    <% end %>
-
     <%= form.label :image, class: 'form-text my-3' %>
     <%= form.file_field :image, class: 'form-text' %>
   </div>
