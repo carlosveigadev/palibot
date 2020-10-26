@@ -1,28 +1,45 @@
 # Ruby On Rails capstone project - Palibot.
 
->  This is a solo projects at the end of the of the Microverse Main Technical Curriculum of the Ruby On Rails section. It's a real-world-like project, built with business specifications to improve and test the achievement of technical and soft skills gained during this section of the program. The main objective was to reproduce the design of The Directory of Schools Webpage inspired by [Mathew Njuguna](https://www.behance.net/gallery/25563385/PatashuleKE) and others on behance, with a different theme. I choose to create a website named [gatherings] where people can meet in real life (after the COVID-19 situation) creating and sharing events across the region desired.
+>  This is a solo projects at the end of the of the Microverse Main Technical Curriculum of the Ruby On Rails section. It's a real-world-like project, built with business specifications to improve and test the achievement of technical and soft skills gained during this section of the program. The main objective was to reproduce the design of liFEsTlye. - Mobile version Webpage inspired by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio) on behance, with a different theme. I choose to create a website named Polibot where people can write articles about places they have visited in the continents of earth.
 
 **A glimpse**
 
+![Palibot Gif](app/assets/images/Palibot-Blog.gif)
 
 
 ## Built With
 
-- HTML,
-- CSS,
-- Bootstrap.
+- Ruby;
+- Ruby On Rails;
+- Devise;
+- TailwindCSS;
+- PostgreSQL;
+- Amazon S3;
+- CarrierWave;
+- Rspec / Capybara.
 
 ## Live Demo
 
-[Live Demo Link](https://rawcdn.githack.com/wrakc/HTML-CSS-Capstone-Project/572a13c4445d57000b13ceae753b40a919cde4f8/index.html)
+[Live Demo Link](https://polibot-web.herokuapp.com/)
 
 ## Video Link Demo
 
-[Video Demo Link](https://www.loom.com/share/7f6cec343d73461c95ea0a1c5d9c1056)
+[Video Demo Link](https://www.loom.com/share/e416c3ab3f8f426cbd06855469838186)
 
 ## Getting Started
 
-**Clone the repository clicking on "Clone or Download" and copy the given link. In your terminal, cd to the folder where you want the project to be and use "git clone "paste the clone link", after that you can locally go to the folder where you cloned the repository and access the website.**
+**Clone the repository clicking on "Clone or Download" and copy the given link. In your terminal, cd to the folder where you want the project to be and use `git clone "paste the clone link"`, after that you can locally go to the folder where you cloned the repository and access the website.**
+
+Make sure you have [PostgreSQL](https://www.postgresql.org/download/) installed on your machine
+
+**After that, open the terminal, cd into the repository and to run:**
+* `bundle install`;
+* `rails db:migrate`;
+* `rails db:seed`
+
+**This commands will ensure you installed the proper gems and properly populated the database.**
+
+**Open the browser and access http://localhost:3000/ to open the project locally.**
 
 ## Authors
 
@@ -45,9 +62,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Microverse for the opportunity;
-- Design idea by [Mathew Njuguna](https://www.behance.net/mathewnjuguna) and others on Behance;
-- [unDraw](https://undraw.co/) for the logo;
-- [Stocksnap](https://stocksnap.io/) for the images;
+- Design idea by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio) and others on Behance;
 - The Minskins for the support.
 
 ## 📝 License
