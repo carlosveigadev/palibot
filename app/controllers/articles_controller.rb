@@ -82,8 +82,7 @@ class ArticlesController < ApplicationController
   end
 
   def most_voted_id
-    id = Vote.most_voted.keys
-    id[0]
+    Vote.most_voted.keys.first
   end
 
   def load_categories

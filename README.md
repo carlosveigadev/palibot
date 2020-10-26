@@ -1,24 +1,55 @@
-# README
+# Ruby On Rails capstone project - Palibot.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+>  This is a solo projects at the end of the of the Microverse Main Technical Curriculum of the Ruby On Rails section. It's a real-world-like project, built with business specifications to improve and test the achievement of technical and soft skills gained during this section of the program. The main objective was to reproduce the design of The Directory of Schools Webpage inspired by [Mathew Njuguna](https://www.behance.net/gallery/25563385/PatashuleKE) and others on behance, with a different theme. I choose to create a website named [gatherings] where people can meet in real life (after the COVID-19 situation) creating and sharing events across the region desired.
 
-Things you may want to cover:
+**A glimpse**
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+## Built With
 
-* Database creation
+- HTML,
+- CSS,
+- Bootstrap.
 
-* Database initialization
+## Live Demo
 
-* How to run the test suite
+[Live Demo Link](https://rawcdn.githack.com/wrakc/HTML-CSS-Capstone-Project/572a13c4445d57000b13ceae753b40a919cde4f8/index.html)
 
-* Services (job queues, cache servers, search engines, etc.)
+## Video Link Demo
 
-* Deployment instructions
+[Video Demo Link](https://www.loom.com/share/7f6cec343d73461c95ea0a1c5d9c1056)
 
-* ...
+## Getting Started
+
+**Clone the repository clicking on "Clone or Download" and copy the given link. In your terminal, cd to the folder where you want the project to be and use "git clone "paste the clone link", after that you can locally go to the folder where you cloned the repository and access the website.**
+
+## Authors
+
+👤 **Carlos Veiga**
+
+- Github: [@githubhandle](https://github.com/wrakc)
+- Twitter: [@twitterhandle](https://twitter.com/carlosveig)
+- Linkedin: [linkedin](https://linkedin.com/chveiga)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse for the opportunity;
+- Design idea by [Mathew Njuguna](https://www.behance.net/mathewnjuguna) and others on Behance;
+- [unDraw](https://undraw.co/) for the logo;
+- [Stocksnap](https://stocksnap.io/) for the images;
+- The Minskins for the support.
+
+## 📝 License
+
+This project is [MIT](LICENSE) licensed.
