@@ -32,6 +32,8 @@
 
 Make sure you have [PostgreSQL](https://www.postgresql.org/download/) installed on your machine
 
+## Setting up DataBase
+
 **After that, open the terminal, cd into the repository and to run:**
 * `bundle install`;
 * `rails db:migrate`;
@@ -40,6 +42,10 @@ Make sure you have [PostgreSQL](https://www.postgresql.org/download/) installed 
 **This commands will ensure you installed the proper gems and properly populated the database.**
 
 **Open the browser and access http://localhost:3000/ to open the project locally.**
+
+## Running RSpec
+**To verify the RSpec test, run the command `bundle exec rspec`.**
+
 
 ## Authors
 
