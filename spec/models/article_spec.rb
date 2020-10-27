@@ -9,7 +9,7 @@ RSpec.describe Article, type: :model do
                       content: 'Anything',
                       created_at: DateTime.now,
                       updated_at: DateTime.now,
-                      image: 'image.jpg',
+                      image: File.new(Rails.root.join('public', 'test_image.png')),
                       user_id: 1)
   end
 
@@ -52,6 +52,6 @@ RSpec.describe Article, type: :model do
     it { should have_many(:votes) }
     it { should have_many(:article_categories) }
     it { should have_many(:categories) }
-    it { should have_one_attached(:image) }
+    it { should validate_presence_of(:image) }
   end
 end

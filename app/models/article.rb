@@ -5,8 +5,7 @@ class Article < ApplicationRecord
   belongs_to :user
   has_many :votes, dependent: :destroy
   mount_uploader :image, ImagesUploader
-  validates :content, presence: true,
-                      length: { maximum: 1000, too_long: '1000 characters in the content is the maximum allowed.' }
-  validates :title, presence: true,
-                    length: { maximum: 50, too_long: '50 characters in the title is the maximum allowed.' }
+  validates :content, length: { maximum: 1000, too_long: '1000 characters in the content is the maximum allowed.' }
+  validates :title, length: { maximum: 50, too_long: '50 characters in the title is the maximum allowed.' }
+  validates :title, :content, :image, presence: true
 end
