@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
   before_action :authenticate_user!, except: %i[index show]
   before_action :load_categories, only: %i[edit update new create]
+  include ActionView::Helpers::TextHelper
   # GET /articles
   # GET /articles.json
   def index
@@ -28,11 +29,14 @@ class ArticlesController < ApplicationController
     @article = current_user.articles.build(article_params)
 
     respond_to do |format|
-      if @article.save
+      if @article.save && @article.valid?
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
         format.json { render :show, status: :created, location: @article }
       else
-        format.html { render :new }
+        format.html do
+          redirect_to new_article_url, flash: { alert: "Article could not be saved because:
+          #{@article.errors.full_messages[0]}" }
+        end
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end

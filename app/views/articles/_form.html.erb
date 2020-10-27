@@ -1,16 +1,6 @@
 <div class="w-full px-12">
 <%= form_with(model: article, local: true, html: {class: 'bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4'}) do |form| %>
-  <% if article.errors.any? %>
-    <div id="error_explanation" class="text-center">
-      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
-      <ul class="text-red-600 text-center">
-        <% article.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+ 
   <div class="field">
     <%= form.label :title, class: 'form-text my-3' %>
     <%= form.text_field :title, class: 'input-form' %>
