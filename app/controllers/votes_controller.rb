@@ -7,7 +7,7 @@ class VotesController < ApplicationController
       redirect_to article_path(@article), flash: { error: "You can't vote more than once" }
     else
       @article.votes.create(user_id: current_user.id)
-      redirect_to article_path(@article), flash: { notice: "Nice! your vote was registered!" }
+      redirect_to article_path(@article), flash: { notice: 'Nice! your vote was registered!' }
     end
   end
 
