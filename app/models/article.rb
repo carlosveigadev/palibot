@@ -1,7 +1,6 @@
 class Article < ApplicationRecord
   has_one_attached :image
-  has_many :article_categories, dependent: :destroy
-  has_many :categories, through: :article_categories
+  belongs_to :category
   belongs_to :user
   has_many :votes, dependent: :destroy
   mount_uploader :image, ImagesUploader
