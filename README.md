@@ -28,16 +28,17 @@
 
 ## Getting Started
 
-**Clone the repository clicking on "Clone or Download" and copy the given link. In your terminal, cd to the folder where you want the project to be and use `git clone "paste the clone link"`, after that you can locally go to the folder where you cloned the repository and access the website.**
+**Clone the repository clicking on "Clone or Download" and copy the given link. In your terminal, cd to the folder where you want the project to be and use `git clone git@github.com:wrakc/palibot.git`, after that you can locally go to the folder where you cloned the repository and access the website.**
 
 Make sure you have [PostgreSQL](https://www.postgresql.org/download/) installed on your machine
 
 ## Setting up DataBase
 
-**After that, open the terminal, cd into the repository and to run:**
+**After that, open the terminal, go to the repository folder and run:**
 * `bundle install`;
+* `rails db:create`;
 * `rails db:migrate`;
-* `rails db:seed`
+* `rails db:seed`;
 
 **This commands will ensure you installed the proper gems and properly populated the database.**
 
