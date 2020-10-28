@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Article, type: :model do
   let(:user) { User.new(id: 1, email: 'test@test.com', username: 'Test') }
-  let(:category) { Category.new(id: 1, name: 'test') }
+  let(:category) { Category.create(id: 1, name: 'test', priority: 1) }
   let(:article) do
     user.articles.new(id: 1,
                       title: 'Title',
@@ -10,7 +10,8 @@ RSpec.describe Article, type: :model do
                       created_at: DateTime.now,
                       updated_at: DateTime.now,
                       image: File.new(Rails.root.join('public', 'test_image.png')),
-                      user_id: 1)
+                      user_id: 1,
+                      category_id: 1)
   end
 
   describe 'validations' do
@@ -50,8 +51,7 @@ RSpec.describe Article, type: :model do
   describe 'associations' do
     it { should belong_to(:user) }
     it { should have_many(:votes) }
-    it { should have_many(:article_categories) }
-    it { should have_many(:categories) }
+    it { should belong_to(:category) }
     it { should validate_presence_of(:image) }
   end
 end
