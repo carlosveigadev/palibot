@@ -23,7 +23,7 @@
             <%= c.name %>
           </h2>
         <% end %>
-        <%= link_to article_path(c.articles.ids) do %>
+        <%= link_to article_path(c.articles.ids.last) do %>
           <h2 class="text-white p-3 pt-24 txt-bg-cat">
             <%= truncate c.articles.last.title, length: 30, omission: '...(click for article)' %>
           </h2>
