@@ -28,7 +28,7 @@
 
 ## Getting Started
 
-**Clone the repository clicking on "Clone or Download" and copy the given link. In your terminal, cd to the folder where you want the project to be and use `git clone git@github.com:wrakc/palibot.git`, after that you can locally go to the folder where you cloned the repository and access the website.**
+**Clone the repository clicking on "Clone or Download" and copy the given link. In your terminal, cd to the folder where you want the project to be and use `git clone https://github.com/wrakc/palibot.git`, after that you can locally go to the folder where you cloned the repository and access the website.**
 
 Make sure you have [PostgreSQL](https://www.postgresql.org/download/) installed on your machine
 
