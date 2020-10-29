@@ -1,0 +1,21 @@
+<%= render "partials/navbar" %>
+<div class= "w-full max-w-xs m-auto text-center my-5">
+  <h1 class="text-orange-600 text-4xl uppercase">Forgot your password?</h1>
+</div>
+<%= render "partials/errors" %>
+
+<div class="w-full max-w-xl m-auto my-24">
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4' }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="mb-4">
+    <%= f.label :email, class: 'form-text my-3' %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "e-mail", class: 'input-form', placeholder: 'e-mail' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Send me reset password instructions", class: "text-sm btn-orange" %>
+  </div>
+<% end %>
+</div>
+<%= render "partials/footer" %>

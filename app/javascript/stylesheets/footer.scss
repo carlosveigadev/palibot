@@ -1,0 +1,16 @@
+.icon-style {
+  @apply mx-1 flex items-center place-content-around;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #ff6200fa;
+}
+
+.icon-style:hover {
+  cursor: pointer;
+}
+
+.icon-style i {
+  @apply text-2xl font-bold;
+  color: #4e443e;
+}

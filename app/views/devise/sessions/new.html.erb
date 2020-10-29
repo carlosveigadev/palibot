@@ -1,0 +1,35 @@
+<%= render "partials/navbar" %>
+<div class= "w-full max-w-xs m-auto text-center my-5">
+  <h1 class="text-orange-600 text-4xl uppercase">Log In</h1>
+</div>
+<%= render "partials/errors" %>
+
+<div class="w-full max-w-xs m-auto">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4'}) do |f| %>
+    <div class="mb-4">
+      <%= f.label :login, class: 'form-text my-3' %>
+      <%= f.text_field :login, autofocus: true, autocomplete: "Username", class: 'input-form', placeholder: 'Username' %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.label :password, class: 'form-text my-3' %>
+      <%= f.password_field :password, autocomplete: "current-password", class: 'input-form', placeholder: "******************" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field my-5">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+
+    <div class="flex items-center justify-between">
+      <div class="actions">
+          <%= f.submit "Log In", class: 'btn-orange' %>
+      </div>
+      <%= link_to "Forgot Password?",  new_user_password_path, class: "inline-block align-baseline font-bold text-sm text-orange-500 hover:text-orange-900" %>
+    </div>
+  <% end %>
+</div>
+<%= render "partials/footer" %>
+

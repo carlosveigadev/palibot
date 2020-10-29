@@ -1,0 +1,41 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+h1 {
+  font-weight: bold;
+}
+
+.form-text {
+  @apply block text-gray-700 text-sm font-bold;
+}
+
+.input-form {
+  @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight;
+}
+
+.input-form:focus {
+  @apply outline-none shadow-outline
+}
+
+.btn-orange {
+  @apply text-white font-bold py-2 px-4 rounded;
+  background-color: #fd6000;
+}
+
+.btn-orange:hover {
+  background-color: #4e443e;
+}
+
+.btn-orange:focus {
+  @apply outline-none shadow-outline
+}
+
+.bg-brown {
+  background-color: #4e443e;
+}
+
+.form-img {
+  width: 200px;
+  display: block;
+}

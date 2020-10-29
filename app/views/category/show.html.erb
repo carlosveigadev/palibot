@@ -1,0 +1,32 @@
+<%= render "partials/navbar" %>
+<%= render "partials/errors" %>
+<div class="grid grid-cols-2">
+  <% @articles.each do |art| %>
+    <div class="item-wrapper grid sm:grid-cols-1 lg:grid-cols-2">
+      <div class="box-wrapper">
+        <div class="custom-height">
+          <%= image_tag art.image.to_s, class: 'w-full h-full' %>
+        </div>
+      </div>
+      <div class="box-wrapper">
+        <div class="flex flex-col bg-gray-200 h-full ">
+          <%= link_to article_path(art.id) do %> 
+            <h2 class="text-orange-600 m-3 font-bold orange-underline">by: <%= art.user.username.humanize %></h2>
+          <% end %>
+          <h2 class="font-bold m-3"><%= art.title %></h2>
+          <h2 class="m-3 box-145"><%= truncate art.content, length: 240 %></h2>
+          <div class="flex flex-row">
+            <div class="p-5 flex flex-row ">
+              <%= link_to article_votes_path(art.id), method: :post, class: 'text-xl text-orange-600' do %>
+                <i class="fa fa-thumbs-up"></i>
+              <% end %>
+              <h2 class='p-1'> <%= art.votes.count %> <%= (art.votes.count) == 1 ? 'Vote' : 'Votes'%></h2>
+            </div>
+            <%= link_to "Read More", article_path(art.id), class: 'text-orange-600 m-5 center-text pt-1' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%= render "partials/footer" %>

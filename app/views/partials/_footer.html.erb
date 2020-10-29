@@ -1,0 +1,24 @@
+<footer class="flex items-center justify-between flex-wrap bg-brown p-6">
+  <div class="flex items-center flex-shrink-0 text-gray-800 mr-6 uppercase">
+    <%= inline_svg_tag("palibot_logo.svg") %>
+  </div>
+  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+    <div class="text-sm lg:flex-grow lg:flex space-x-16 place-content-center text-orange-600 font-extrabold">
+      <%= link_to 'Privacy Police', new_article_path, class: "block mt-4 lg:inline-block lg:mt-0 hover:text-orange-600 mr-4" %>      
+      <%= link_to 'Terms & Conditions', articles_path, class: "block mt-4 lg:inline-block lg:mt-0 hover:text-orange-600 mr-4" %>
+      <h2 class="block mt-4 text-gray-500 lg:inline-block lg:mt-0 mr-4">Copyright 2020. All rights reserved.</h2>
+    </div>
+  <div class="text-gray-500 text-xs font-extrabold lg:justify-end lg:flex items-center">
+    <h2>Connect with us:</h2>
+    <div class='icon-style'>
+      <i class="fa fa-twitter"></i>
+    </div>
+     <div class='icon-style'>
+      <i class="fa fa-instagram"></i>
+    </div>
+    <div class='icon-style'>
+      <i class="fa fa-facebook"></i>
+    </div>
+  </div>
+  </div>
+</footer>

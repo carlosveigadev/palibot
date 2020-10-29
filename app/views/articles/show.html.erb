@@ -1,0 +1,25 @@
+<%= render "partials/errors" %>
+<%= render "partials/navbar" %>
+<div class="bg-white m-12 shadow-2xl rounded">
+  <p class="text-orange-600 text-2xl p-5">
+    <strong>Title:</strong>
+    <%= @article.title %>
+  </p>
+  <div class="text-xl p-5">
+    <p>
+    <%= @article.content %>
+    </p>
+  </div>
+  <div class="text-xl p-5 flex place-content-center">
+    <p>
+      <%= image_tag @article.image.to_s %>
+    </p>
+  </div>
+  <div class="text-xl p-5 flex place-content-center">
+    <%= link_to article_votes_path(@article), method: :post, class: 'text-orange-600 p-2' do %>
+     <i class="fa fa-thumbs-up"></i>
+    <% end %>
+    <h2 class='p-2'> <%= @article.votes.count %> <%= (@article.votes.count) == 1 ? 'Vote' : 'Votes'%></h2>
+  </div>
+</div>
+<%= render "partials/footer" %>

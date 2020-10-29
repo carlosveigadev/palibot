@@ -1,0 +1,33 @@
+<div class="flex center">
+  <div class="w-full relative">
+    <% @top_article.each do |article| %>
+      <%= link_to article do %>
+        <%= image_tag article.image.to_s, alt: 'Top Main Image', class: 'top-img-size object-cover w-full' %>
+        <div class='absolute bottom-0 txt-bg w-full font-bold'>
+           <%= link_to article do %>
+          <h2 class="m-4 text-orange-600 "><%= article.title %></h2>
+        <% end %>
+        <%= link_to article do %>
+          <div class="m-4 text-white"><%= truncate article.content, length: 60, omission: '...(click for more)' %></div>
+         <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="grid lg:grid-cols-5 sm:grid-cols-2">
+    <% @categories.each do |c| %>
+      <div class='font-bold bg-center bg-cover' style="background-image: url(<%= c.articles.last.image %>)";>
+        <%= link_to category_path(c.id) do %>
+          <h2 class="text-white m-3 green-underline">
+            <%= c.name %>
+          </h2>
+        <% end %>
+        <%= link_to article_path(c.articles.ids.last) do %>
+          <h2 class="text-white p-3 pt-24 txt-bg-cat">
+            <%= truncate c.articles.last.title, length: 30, omission: '...(click for article)' %>
+          </h2>
+        <% end %>
+      </div>
+    <% end %>
+</div>
