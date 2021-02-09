@@ -1,6 +1,6 @@
 # Ruby On Rails capstone project - Palibot.
 
->  This is a solo projects at the end of the of the Microverse Main Technical Curriculum of the Ruby On Rails section. It's a real-world-like project, built with business specifications to improve and test the achievement of technical and soft skills gained during this section of the program. The main objective was to reproduce the design of liFEsTlye. - Mobile version Webpage inspired by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio) on behance, with a different theme. I choose to create a website named Polibot (filipino word for 'wanderer') where people can write articles about places they have visited in the continents of earth.
+> This is a solo project at the end of the Microverse Main Technical Curriculum of the Ruby On Rails section. It's a real-world-like project, built with business specifications to improve and test the achievement of technical and soft skills gained during this section of the program. The main objective was to reproduce the design of liFEsTlye. - Mobile version Webpage inspired by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio) on Behance, with a different theme. I choose to create a website named Polibot (Filipino word for 'wanderer') where people can write articles about places they have visited on the continents of the earth.
 
 **A glimpse**
 
